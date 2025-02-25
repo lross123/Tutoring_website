@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Academic Information - Luke Ross Mathematics Tutoring</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Ensure mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Vanta.js Background Container -->
+    <div id="vanta-bg">
+        <!-- Header Section -->
+        <header>
+            <div class="container header-container">
+                <div class="logo">
+                    <div class="logo-content">
+                        <div class="profile-picture">
+                            <img src="images/profile.jpg" alt="Profile Picture">
+                        </div>
+                    <!-- Add your logo image or text here -->
+                    <!-- Example: <img src="images/logo.png" alt="Logo"> -->
+                    <!-- <h1>Academic Information</h1> -->
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="academic.html" class="active">Academic Information</a></li>
+                        <li><a href="work-experience.html">Work Experience</a></li>
+                        <li><a href="prices.html">Delineation of Fees</a></li>
+                        <li><a href="calendar.html" class="active">Tutoring Calendar</a></li>
+                        <li><a href="documents.html">Demo</a></li>
+                        <li><a href="helpful_links.html">Helpful Links</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="container">
+                <!-- Academic Information Section -->
+                    
+                    <!-- Education Section -->
+                 
+                    <ul>
+                            <section class="card">
+
+                            <h2>PhD in Applied Mathematics</h2>
+                            <strong>Queensland University of Technology</strong><br>
+                            <em>Feburary 2024 – Feburary 2027 | Brisbane</em><br>
+                            <li>
+                            Simulation-based mathematical models and parameter estimation to interpret tissue growth experiments<br>
+                            </li>
+                            <li>
+                            International student scholarship
+                            </li>
+                            <strong>The University of Queensland</strong><br>
+                            <em>Feburary 2024 – Feburary 2027 | Brisbane</em><br>
+                            <li>
+                            Visiting academic<br>
+                            </li>
+                            <li>
+                            Collaborating with the BMSE lab at The University of Queensland<br>
+                            </li>
+                        </section>
+
+                            <section class="card">
+                    
+                            <h2>MSc in Biomedical Engineering</h2>
+                            <strong> The University of Warwick</strong><br>
+                            <em>October 2023 – September 2024 | Coventry</em><br>
+                            <li>
+                            Dissertation title: PKPD Modeling to Assess the Effects of Anti-Cancer Agents on Tumor Volume (Collaboration with GSK)<br>
+                            </li>
+                        </section>
+
+                            <section class="card">
+                    
+                            <h2>BSc (Hons) in Mathematics with Economics</h2>
+                            <strong>Loughborough University</strong><br>
+                            <em>October 2020 – July 2023 | Loughborough</em><br>
+                        
+                        </section>
+
+                            <section class="card">
+                        
+                         <h2>A-Levels</h2>
+                            <strong>The Sixth Form College Farnborough</strong><br>
+                            <em>September 2018 – August 2020 | Farnborough</em><br>
+                            <li>
+                                Studied Mathematics, Further Mathematics, Physics & Chemistry
+                                </li>
+                        
+                    </ul>
+                </section>
+
+                <section class="card">
+                    <!-- Achievements Section -->
+                    <h2>Achievements</h2>
+                    <ul>
+                        <li>PhD Scholarship at Queensland University of Technology</li>
+                        <li>In the process of completing my first publication for mathematical modelling of cancer drugs</li>
+                        <li>A current student has come from failing Edexcel mathematics to performing at the A* level</li>
+                    </ul>
+                </section>
+                
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="container">
+                <p>Contact me at: luke.ross200121@gmail.com</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Three.js Library (required by Vanta.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <!-- Vanta.js Waves Effect -->
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
+    <!-- Your JavaScript File -->
+    <script src="script.js"></script>
+
+<!-- Chat Button -->
+<button class="chat-button" onclick="toggleChat()">💬</button>
+
+<!-- Chat Popup -->
+<div class="chat-popup" id="chatForm">
+    <h3>Contact Us</h3>
+    <form action="send_email.php" method="POST">
+        <input type="text" name="name" placeholder="Name*" required>
+        <input type="email" name="email" placeholder="Email*" required>
+        <textarea name="message" placeholder="How can we help?*" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+
+
+</body>
+</html>

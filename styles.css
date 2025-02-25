@@ -1,0 +1,721 @@
+/* Reset Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Set body and html height */
+html, body {
+    height: 100%;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+/* Vanta Background Container */
+#vanta-bg {
+    width: 100%;
+    min-height: 100vh;
+    position: relative; /* Ensure positioning context */
+    overflow: hidden;   /* Hide overflow if necessary */
+}
+
+/* Position the Vanta.js canvas behind content */
+#vanta-bg canvas {
+    position: absolute !important;
+    top: 0;
+    left: 0;
+    z-index: -1; /* Place canvas behind other elements */
+}
+
+/* Container */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styles with Background */
+header {
+    position: sticky;
+    top: 0;
+    z-index: 2; /* Ensure it stays above the background */
+    background-color: rgba(255, 255, 255, 0.95); /* White background with slight transparency */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    padding: 10px 0; /* Space around header content */
+}
+
+/* Header Flexbox Layout */
+.header-container {
+    display: flex;
+    justify-content: space-between; /* Align logo to the left and nav to the right */
+    align-items: center; /* Vertically centers the content */
+}
+
+/* Logo Styles */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Reduce space between image and text */
+}
+
+.header-container {
+    padding: 10px 0; /* Adjust spacing inside the header */
+}
+
+
+/* Profile Picture Styles */
+.profile-picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture img {
+    width: 120px; /* Adjust the size as needed */
+    height: 120px; /* Makes it a box shape */
+    border-radius: 10px; /* Adds slight rounding to the corners */
+    border: 2px solid #0A174E; /* Keeps the border */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow */
+    display: block;
+    margin: 0 auto; /* Centers the image */
+}
+
+
+/* Logo Text Styles */
+.logo h1 {
+    font-size: 2em;
+    color: #0A174E; /* Royal Blue */
+}
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px; /* Space between navigation links */
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0A174E; /* Royal Blue */
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #0A174E; /* Royal Blue */
+    color: #FFFFFF;
+}
+
+/* Main Content Styles */
+main {
+    padding: 80px 0;
+}
+
+.card {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 30px;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #0A174E; /* Royal Blue */
+}
+
+.card p {
+    line-height: 1.6;
+    color: #333;
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+    margin-top: 20px;
+    border-radius: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 20px 0;
+    border-top: 2px solid #0A174E; /* Royal Blue */
+    text-align: center;
+    color: #0A174E; /* Royal Blue */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        justify-content: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 10px;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+}
+
+/* Navigation Styles */
+nav ul li a {
+    text-decoration: none;
+    color: #0A174E; /* Royal Blue */
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #0A174E; /* Royal Blue */
+    color: #FFFFFF; /* White */
+}
+
+
+.expertise-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between boxes */
+    margin-top: 10px;
+}
+
+.expertise-box {
+    padding: 10px 15px;
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid #0A174E; /* Royal blue border */
+    border-radius: 5px;
+    font-size: 0.9em;
+    color: #0A174E; /* Royal blue text */
+    display: inline-block;
+    cursor: default; /* To indicate it's not clickable */
+}
+
+.expertise-box:hover {
+    background-color: #0A174E; /* Royal blue on hover */
+    color: #FFFFFF; /* White text on hover */
+}
+
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex; /* Makes the list items appear in a row */
+    justify-content: center; /* Centers the items horizontally */
+    align-items: center; /* Aligns items vertically */
+    padding: 0;
+    margin: 0;
+    gap: 20px; /* Adds space between the items */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+nav ul li {
+    margin: 0; /* Removes unnecessary margin */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0A174E; /* Royal Blue */
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block; /* Ensures links stay in a single line */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Adds hover animation */
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    background-color: #0A174E; /* Royal Blue background on hover or active state */
+    color: #FFFFFF; /* White text */
+}
+
+/* For smaller screens */
+@media (max-width: 768px) {
+    nav ul {
+        flex-wrap: wrap; /* Allows items to wrap if necessary on smaller screens */
+        gap: 10px; /* Reduces gap between items for smaller screens */
+    }
+
+    nav ul li a {
+        padding: 8px 10px; /* Adjusts padding for smaller screens */
+    }
+}
+
+
+
+
+/* Navigation Styles */
+nav ul {
+    list-style: none;
+    display: flex; /* Makes the list items appear in a row */
+    justify-content: center; /* Centers the items horizontally */
+    align-items: center; /* Aligns items vertically */
+    padding: 0;
+    margin: 0;
+    gap: 20px; /* Adds space between the items */
+    white-space: nowrap; /* Prevents text from wrapping to the next line */
+}
+
+nav ul li {
+    margin: 0; /* Removes unnecessary margin */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #0A174E; /* Royal Blue */
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    display: inline-block; /* Ensures links stay in a single line */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Adds hover animation */
+}
+
+/* Style for hovered link */
+nav ul li a:hover {
+    background-color: #0A174E; /* Royal Blue background on hover */
+    color: #FFFFFF; /* White text */
+}
+
+/* Style for active link (only one at a time) */
+nav ul li a.active {
+    background-color: transparent; /* Reset active background to transparent */
+    color: #0A174E; /* Royal Blue text */
+    font-weight: bold;
+}
+
+
+
+.helpful-links-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.helpful-links-list li {
+    margin-bottom: 10px;
+}
+
+.helpful-links-list a {
+    text-decoration: none;
+    color: #0A174E; /* Royal Blue */
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.helpful-links-list a:hover {
+    color: #0056b3; /* Darker Blue on hover */
+}
+
+
+.profile-picture img {
+    width: 150px; /* Adjust the size as needed */
+    height: auto; /* Ensures the aspect ratio is maintained */
+    border-radius: 50%; /* Makes the image circular */
+    border: 3px solid #0A174E; /* Adds a border around the image */
+    display: block; /* Ensures proper alignment */
+    margin: 0 auto; /* Centers the image inside its container */
+}
+
+
+ul {
+    list-style-type: disc; /* Primary bullet style */
+    margin-left: 20px; /* Indent the list */
+}
+
+ul ul {
+    list-style-type: circle; /* Secondary bullet style */
+    margin-left: 20px; /* Further indentation for nested lists */
+}
+
+li {
+    margin-bottom: 5px; /* Add spacing between bullet points */
+}
+
+
+
+.pricing-section {
+    font-family: Arial, sans-serif;
+    color: #0A174E; /* Matches your branding color */
+    line-height: 1.6; /* Adds spacing between lines for readability */
+}
+
+.pricing-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #0A174E; /* Matches the heading color */
+}
+
+.pricing-section ul {
+    list-style-type: disc; /* Standard bullet points */
+    margin-left: 20px; /* Indent for the bullet points */
+    margin-bottom: 20px; /* Spacing between sections */
+}
+
+.pricing-section ul li {
+    margin-bottom: 5px; /* Adds spacing between list items */
+}
+
+
+
+.pdf-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows multiple PDFs to wrap to the next line if necessary */
+    gap: 20px; /* Space between PDFs */
+    justify-content: center; /* Centers the PDFs in the container */
+}
+
+.pdf-item {
+    width: 300px; /* Adjust the width of the embedded PDF */
+    height: 400px; /* Adjust the height of the embedded PDF */
+    text-align: center; /* Centers the text and link */
+}
+
+.pdf-item iframe {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #ccc; /* Adds a border around the embedded PDF */
+    border-radius: 5px; /* Slightly rounds the corners */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    overflow: hidden; /* Ensures the PDF content doesn't overflow */
+}
+
+.pdf-item a {
+    display: inline-block;
+    margin-top: 10px; /* Space between the iframe and the link */
+    color: #0A174E; /* Matches your branding */
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.pdf-item a:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+
+
+
+.pdf-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping for responsiveness */
+    gap: 30px; /* Larger spacing between PDFs */
+    justify-content: center; /* Centers PDFs horizontally */
+    margin-top: 20px; /* Adds space above the PDF container */
+}
+
+.pdf-item {
+    width: 600px; /* Adjust the width of the embedded PDF */
+    height: 800px; /* Adjust the height of the embedded PDF */
+    text-align: center; /* Centers the link and content */
+}
+
+.pdf-item iframe {
+    width: 100%; /* Ensures the iframe fills its container */
+    height: 100%; /* Ensures the iframe height is consistent */
+    border: 1px solid #ccc; /* Adds a border around the embedded PDF */
+    border-radius: 5px; /* Slightly rounds the corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+    overflow: hidden; /* Prevents overflow from the iframe */
+}
+
+.pdf-item a {
+    display: inline-block;
+    margin-top: 15px; /* Adds space between the iframe and the link */
+    color: #0A174E; /* Matches your site's branding */
+    font-weight: bold;
+    text-decoration: none;
+    font-size: 1.1em; /* Makes the link text slightly larger */
+}
+
+.pdf-item a:hover {
+    color: #0056b3; /* Changes to a darker blue on hover */
+}
+
+
+.video-container {
+    text-align: center; /* Centers the video */
+    margin: 20px 0; /* Adds spacing above and below the video */
+}
+
+.video-container iframe,
+.video-container video {
+    width: 100%; /* Makes the video responsive */
+    max-width: 800px; /* Sets a maximum width for the video */
+    height: auto; /* Maintains aspect ratio */
+    border: 1px solid #ccc; /* Adds a border */
+    border-radius: 5px; /* Rounds the corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow */
+}
+
+
+
+.video-container {
+    display: flex;
+    justify-content: center; /* Centers the video on the page */
+    margin: 20px 0; /* Adds spacing above and below the video */
+}
+
+.video-container iframe {
+    width: 100%; /* Makes the video responsive */
+    max-width: 900px; /* Sets a maximum width for large screens */
+    height: 506px; /* Ensures a 16:9 aspect ratio (900px x 506px) */
+    border: none; /* Removes the iframe border */
+    border-radius: 5px; /* Adds slightly rounded corners for a modern look */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Adds a subtle shadow around the video */
+}
+
+
+
+
+.materials-container {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    gap: 10px; /* Space between material items */
+    margin-bottom: 20px; /* Adds spacing below the materials section */
+}
+
+.material-item a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #0A174E; /* Matches your branding */
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.material-item a:hover {
+    background-color: #0A174E;
+    color: #FFFFFF;
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 800px; /* Adjust height for better viewing */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.pdf-viewer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+
+
+.materials-container {
+    display: flex;
+    flex-direction: column; /* Align items in a column */
+    gap: 10px; /* Space between material items */
+    margin-bottom: 20px; /* Adds spacing below the materials section */
+}
+
+.material-item a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #0A174E; /* Matches your branding */
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+}
+
+.material-item a:hover {
+    background-color: #0A174E;
+    color: #FFFFFF;
+}
+
+.pdf-viewer {
+    width: 100%;
+    height: 800px; /* Adjust height for better viewing */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-top: 20px; /* Adds spacing above the viewer */
+}
+
+.pdf-viewer iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none; /* Initially hide the iframe */
+}
+
+
+/* Chat Button */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #0A174E; /* Royal Blue */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.chat-popup {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background-color: white;
+    border: 2px solid #0A174E; /* Royal Blue */
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    padding: 20px;
+    z-index: 1000;
+}
+
+.chat-popup h3 {
+    margin-bottom: 10px;
+    color: #0A174E; /* Royal Blue */
+}
+
+.chat-popup input,
+.chat-popup textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.chat-popup button {
+    background-color: #0A174E; /* Royal Blue */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.chat-popup button:hover {
+    background-color: #092B7A; /* Darker Blue */
+}
+
+
+#calendar {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Calendar Table Styles */
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+.calendar-table th,
+.calendar-table td {
+  border: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+}
+.calendar-table th {
+  background-color: #0A174E;
+  color: #fff;
+}
+
+/* Calendar Slot States */
+.available {
+  background-color: #d4edda;
+  cursor: pointer;
+}
+.available:hover {
+  background-color: #c3e6cb;
+}
+.pending {
+  background-color: #fff3cd;
+}
+.booked {
+  background-color: #f8d7da;
+  cursor: not-allowed;
+}
+
+/* Tabs for Calendar Months */
+.tabs {
+  display: flex;
+  margin: 20px 0;
+  justify-content: center;
+}
+.tab {
+  padding: 10px 20px;
+  cursor: pointer;
+  background-color: #f1f1f1;
+  border: 1px solid #ddd;
+  border-bottom: none;
+  text-align: center;
+  margin-right: 5px;
+}
+.tab.active {
+  background-color: #0A174E;
+  color: #fff;
+}
+
+/* Week Header Style */
+.week-header {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-top: 20px;
+  color: #0A174E;
+}
+
+
+/* Make the calendar card transparent so the blue waves are visible around it */
+.calendar-card {
+    background-color: transparent; /* Or use rgba(255,255,255,0.5) for a semi-transparent look */
+    box-shadow: none; /* Remove the box-shadow if it’s obscuring the background */
+    border: 2px solid rgba(10, 23, 78, 0.5); /* Optional: a subtle border for definition */
+    padding: 20px; /* Adjust padding as needed */
+  }
+  
+
+
+  .calendar-card {
+    background-color: transparent !important;  /* or use rgba(255,255,255,0.7) for a semi-transparent look */
+    box-shadow: none !important;                /* remove any shadow */
+    border: 2px solid rgba(10, 23, 78, 0.5);      /* optional border for definition */
+    margin: 20px;                               /* ensure there's space for the waves to show */
+  }
+  
+
+
+ 
+

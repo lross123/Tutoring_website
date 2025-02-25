@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prices - Your Tutoring Website</title>
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Ensure mobile responsiveness -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <!-- Vanta.js Background Container -->
+    <div id="vanta-bg">
+        <!-- Header Section -->
+        <header>
+            <div class="container header-container">
+                <div class="logo">
+                    <div class="logo-content">
+                        <div class="profile-picture">
+                            <img src="images/profile.jpg" alt="Profile Picture">
+                        </div>
+                    <!-- Add your logo image or text here -->
+                    <!-- Example: <img src="images/logo.png" alt="Logo"> -->
+                    <!-- <h1>Delineation of Fees</h1> -->
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="academic.html">Academic Information</a></li>
+                        <li><a href="work-experience.html">Work Experience</a></li>
+                        <li><a href="prices.html" class="active">Delineation of Fees</a></li>
+                        <li><a href="calendar.html" class="active">Tutoring Calendar</a></li>
+                        <li><a href="documents.html">Demo</a></li>
+                        <li><a href="helpful_links.html">Helpful Links</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main>
+            <div class="container">
+                <!-- Prices Section -->
+                <section class="card">
+                    <div class="pricing-section">
+                        <!-- Price Scheme for Individual Sessions -->
+                        <h3>Price Scheme for 60-Minute Sessions (Individual)</h3>
+                        <ul>
+                            <li>£29.99 for GCSE</li>
+                            <li>£34.99 for A-Level Mathematics</li>
+                            <li>£39.99 for A-Level Mathematics</li>
+                        </ul>
+                
+                        <!-- Price Scheme for 90-Minute Sessions -->
+                        <h3>Price Scheme for 90-Minute Sessions (Induvidual)</h3>
+                        <ul>
+                            <li>£39.99 for GCSE Mathematics</li>
+                            <li>£49.99 for A-Level Mathematics</li>
+                            <li>£54.99 for A-Level Further Mathematics</li>
+                        </ul>
+                
+                        <!-- Price Scheme for Group Sessions -->
+                        <h3>Price Scheme for 60-Minute Group Sessions (up to 4 Students)</h3>
+                        <ul>
+                            <li>£19.99 for GCSE Mathematics</li>
+                            <li>£24.99 for A-Level Mathematics</li>
+                        </ul>
+                
+                        <!-- Price for Admissions Tests -->
+                        <h3>Admissions Tests per Hour</h3>
+                        <ul>
+                            <li>£37.49 for MAT</li>
+                            <li>£37.49 for STEP</li>
+                        </ul>
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="container">
+                <p>Contact me at: luke.ross200121@gmail.com</p>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Scripts -->
+    <!-- Three.js Library (required by Vanta.js) -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <!-- Vanta.js Waves Effect -->
+    <script src="https://cdn.jsdelivr.net/npm/vanta/dist/vanta.waves.min.js"></script>
+    <!-- Your JavaScript File -->
+    <script src="script.js"></script>
+
+<!-- Chat Button -->
+<button class="chat-button" onclick="toggleChat()">💬</button>
+
+<!-- Chat Popup -->
+<div class="chat-popup" id="chatForm">
+    <h3>Contact Us</h3>
+    <form action="send_email.php" method="POST">
+        <input type="text" name="name" placeholder="Name*" required>
+        <input type="email" name="email" placeholder="Email*" required>
+        <textarea name="message" placeholder="How can we help?*" required></textarea>
+        <button type="submit">Send</button>
+    </form>
+</div>
+
+
+
+</body>
+</html>

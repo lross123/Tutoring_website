@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tutoring Calendar - Your Tutoring Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background-color: #0A174E;
+            color: white;
+        }
+        .available {
+            background-color: #d4edda;
+            cursor: pointer;
+        }
+        .pending {
+            background-color: #fff3cd;
+        }
+        .booked {
+            background-color: #f8d7da;
+            cursor: not-allowed;
+        }
+        .available:hover {
+            background-color: #c3e6cb;
+        }
+        .tabs {
+            display: flex;
+            margin: 20px 0;
+            justify-content: center;
+        }
+        .tab {
+            padding: 10px 20px;
+            cursor: pointer;
+            background-color: #f1f1f1;
+            border: 1px solid #ddd;
+            border-bottom: none;
+            text-align: center;
+        }
+        .tab.active {
+            background-color: #0A174E;
+            color: white;
+        }
+        .week-header {
+            font-size: 1.2em;
+            font-weight: bold;
+            margin-top: 20px;
+            color: #0A174E;
+        }
+        .month {
+            display: none;
+        }
+        .month.active {
+            display: block;
+        }
+        .card {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="vanta-bg">
+        <header>
+            <div class="container header-container">
+                <div class="logo">
+                    <div class="logo-content">
+                        <div class="profile-picture">
+                            <img src="images/profile.jpg" alt="Profile Picture">
+                        </div>
+                    <!-- Add your logo image or text here -->
+                    <!-- Example: <img src="images/logo.png" alt="Logo"> -->
+                    <!-- <h1>Academic Information</h1> -->
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="academic.html" class="active">Academic Information</a></li>
+                        <li><a href="work-experience.html">Work Experience</a></li>
+                        <li><a href="prices.html">Delineation of Fees</a></li>
+                        <li><a href="calendar.html" class="active">Tutoring Calendar</a></li>
+                        <li><a href="documents.html">Demo</a></li>
+                        <li><a href="helpful_links.html">Helpful Links</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+
+        <main>
+            <div class="container">
+                <section class="card calendar-card">
+                    <h2>Book Your Tutoring Slot</h2>
+                    
+                    <!-- Tabs for months -->
+                    <div class="tabs" id="tabs">
+                        <div class="tab active" data-month="Jan">Jan</div>
+                        <div class="tab" data-month="Feb">Feb</div>
+                        <div class="tab" data-month="Mar">Mar</div>
+                        <div class="tab" data-month="Apr">Apr</div>
+                        <div class="tab" data-month="May">May</div>
+                        <div class="tab" data-month="Jun">Jun</div>
+                        <div class="tab" data-month="Jul">Jul</div>
+                        <div class="tab" data-month="Aug">Aug</div>
+                        <div class="tab" data-month="Sep">Sep</div>
+                        <div class="tab" data-month="Oct">Oct</div>
+                        <div class="tab" data-month="Nov">Nov</div>
+                        <div class="tab" data-month="Dec">Dec</div>
+
+
+                        <!-- Add more months as needed -->
+                    </div>
+
+                    <!-- Calendar content for each month -->
+                    <div id="calendar-container">
+                        <div class="month active" id="Jan"></div>
+                        <div class="month" id="Feb"></div>
+                        <div class="month" id="Mar"></div>
+                        <div class="month" id="Apr"></div>
+                        <div class="month" id="May"></div>
+                        <div class="month" id="Jun"></div>
+                        <div class="month" id="Jul"></div>
+                        <div class="month" id="Aug"></div>
+                        <div class="month" id="Sep"></div>
+                        <div class="month" id="Oct"></div>
+                        <div class="month" id="Nov"></div>
+                        <div class="month" id="Dec"></div>
+
+
+                        <!-- Add more month containers as needed -->
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div class="container">
+                <p>Contact me at: luke.ross200121@gmail.com</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const tabs = document.querySelectorAll('.tab');
+            const months = document.querySelectorAll('.month');
+            const weeksPerMonth = 4; // Number of weeks per month
+            const slots = [
+                "17:00 - 18:00",
+                "18:00 - 19:00",
+                "19:00 - 20:00",
+                "20:00 - 21:00",
+                "21:00 - 22:00",
+            ];
+
+            // Tab switching logic
+            tabs.forEach(tab => {
+                tab.addEventListener('click', () => {
+                    tabs.forEach(t => t.classList.remove('active'));
+                    months.forEach(m => m.classList.remove('active'));
+                    tab.classList.add('active');
+                    document.getElementById(tab.dataset.month).classList.add('active');
+                });
+            });
+
+            // Generate weeks and tables for each month
+            months.forEach((monthDiv, monthIndex) => {
+                for (let week = 0; week < weeksPerMonth; week++) {
+                    const startDay = week + 1;
+                    const endDay = startDay + 6;
+
+                    // Create week header
+                    const weekHeader = document.createElement('div');
+                    weekHeader.className = 'week-header';
+                    weekHeader.textContent = `Week: ${startDay}`;
+                    monthDiv.appendChild(weekHeader);
+
+                    // Create table
+                    const table = document.createElement('table');
+                    const thead = document.createElement('thead');
+                    const tbody = document.createElement('tbody');
+
+                    // Header row
+                    const headerRow = document.createElement('tr');
+                    const timeHeader = document.createElement('th');
+                    timeHeader.textContent = 'Time';
+                    headerRow.appendChild(timeHeader);
+
+                    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+                    days.forEach(day => {
+                        const th = document.createElement('th');
+                        th.textContent = day;
+                        headerRow.appendChild(th);
+                    });
+                    thead.appendChild(headerRow);
+
+                    // Time slots
+                    slots.forEach(slot => {
+                        const row = document.createElement('tr');
+                        const timeCell = document.createElement('td');
+                        timeCell.textContent = slot;
+                        row.appendChild(timeCell);
+
+                        days.forEach(() => {
+                            const cell = document.createElement('td');
+                            cell.className = 'available';
+                            cell.textContent = 'Available';
+                            cell.addEventListener('click', () => {
+                                const name = prompt('Enter your name to book this slot:');
+                                if (name) {
+                                    cell.textContent = 'Pending Approval';
+                                    cell.classList.remove('available');
+                                    cell.classList.add('pending');
+                                }
+                            });
+                            row.appendChild(cell);
+                        });
+
+                        tbody.appendChild(row);
+                    });
+
+                    table.appendChild(thead);
+                    table.appendChild(tbody);
+                    monthDiv.appendChild(table);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
